@@ -25,7 +25,7 @@ I already had some experience with transformer models from the field of Natural 
 
 > Let's put into tables what these papers did, so that we know what was done similarly and what was done differently.
 
-And that seed eventually bloomed into our review paper on [Transformers for molecular property prediction](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00747){:target="_blank" rel="noopener"}!
+And that seed eventually bloomed into our review paper on [Transformers for molecular property prediction](https://pubs.acs.org/doi/10.1021/acs.jcim.4c00747){:target="_blank" rel="noopener"}[^1]!
 
 <figure>
   <img src="/images/beginning/2.png" alt="Figure 1" width="600"/>
@@ -63,7 +63,7 @@ I’d be more than happy to discuss the best visualization methods in comments o
 
 > **ANYTHING** beyond table reporting is a step in the right direction.
 
-So, because I knew I couldn't trust myself (or others) to glean insights from raw numbers, I decided to manually[^1] 😣 extract performance numbers, put them in Excel, and start plotting them myself.
+So, because I knew I couldn't trust myself (or others) to glean insights from raw numbers, I decided to manually[^2] 😣 extract performance numbers, put them in Excel, and start plotting them myself.
 
 <figure>
   <img src="/images/beginning/4.png" alt="Figure 3" width="600"/>
@@ -115,7 +115,7 @@ This is unacceptable because, for a **fair comparison**, both models need to be 
 - the **same repetitions** (e.g., K-folds)  
 - the **same splitting technique** (e.g., scaffold split)
 
-We distilled how each article performed its tests and found: **there is no standardized way of testing a model on a dataset** (Figure 6).[^2]
+We distilled how each article performed its tests and found: **there is no standardized way of testing a model on a dataset** (Figure 6).[^3]
 
 <figure>
   <img src="/images/beginning/7.png" alt="Figure 6" width="600"/>
@@ -173,6 +173,6 @@ Spoiler alert: it didn’t! 😉
 
 ---
 
-[^1]: This introduces human error. The performance tables weren’t available in Excel, so I had to copy-paste (when feasible) or screenshot them, then use Excel’s image capture and proofreading. It was a *lot* of manual work—and we all know now that human + lots of numbers is not the ideal mix. I tried my best to ensure accuracy, but no guarantees.
-
-[^2]: Information was distilled from each manuscript and, when needed, scavenged from GitHub repositories. If something is misreported, it may be due to my mistake (apologies!) or a lack of transparency in the original article.
+[^1]: publicly accessible pre-print version [here](https://arxiv.org/abs/2404.03969)
+<br>[^2]: This introduces human error. The performance tables weren’t available in Excel, so I had to copy-paste (when feasible) or screenshot them, then use Excel’s image capture and proofreading. It was a *lot* of manual work—and we all know now that human + lots of numbers is not the ideal mix. I tried my best to ensure accuracy, but no guarantees.
+<br>[^3]: Information was distilled from each manuscript and, when needed, scavenged from GitHub repositories. If something is misreported, it may be due to my mistake (apologies!) or a lack of transparency in the original article.
