@@ -174,5 +174,7 @@ Spoiler alert: it didn’t! 😉
 ---
 
 [^1]: publicly accessible pre-print version [here](https://arxiv.org/abs/2404.03969)
-<br>[^2]: This introduces human error. The performance tables weren’t available in Excel, so I had to copy-paste (when feasible) or screenshot them, then use Excel’s image capture and proofreading. It was a *lot* of manual work—and we all know now that human + lots of numbers is not the ideal mix. I tried my best to ensure accuracy, but no guarantees.
-<br>[^3]: Information was distilled from each manuscript and, when needed, scavenged from GitHub repositories. If something is misreported, it may be due to my mistake (apologies!) or a lack of transparency in the original article.
+
+[^2]: This introduces human error. The performance tables weren’t available in Excel, so I had to copy-paste (when feasible) or screenshot them, then use Excel’s image capture and proofreading. It was a *lot* of manual work—and we all know now that human + lots of numbers is not the ideal mix. I tried my best to ensure accuracy, but no guarantees.
+
+[^3]: Information was distilled from each manuscript and, when needed, scavenged from GitHub repositories. If something is misreported, it may be due to my mistake (apologies!) or a lack of transparency in the original article.
