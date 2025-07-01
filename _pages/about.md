@@ -24,7 +24,7 @@ complex, but I aim to make them feel intuitive—just like I managed to show mys
 at all! After all, this is *The Diaries* of a cheminformatics PhD student. Diaries aren’t just about research; they’re 
 about the person behind it too.
 
-To describe the spirit of this website, I want to borrow a quote from Sarah Kay in 
+To describe the spirit of this blog, I want to borrow a quote from Sarah Kay in 
 [one of my favourite YouTube videos of all time](https://www.youtube.com/watch?v=54ST8bwOVyc){:target="_blank" rel="noopener"} (with a little tweak to fit my context):
 
 > *“Take these blog posts—they are all I have to offer. They may not be first, or ever best, but they’re the 

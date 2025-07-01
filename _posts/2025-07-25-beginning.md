@@ -67,7 +67,7 @@ So, because I knew I couldn't trust myself (or others) to glean insights from ra
 
 <figure>
   <img src="/images/beginning/4.png" alt="Figure 3" width="600"/>
-  <figcaption><strong>Figure 3:</strong> We plotted the performance tables ourselves; since each article reported performance differently, the plots# types also varied.</figcaption>
+  <figcaption><strong>Figure 3:</strong> We plotted the performance tables ourselves; since each article reported performance differently, the plots types also varied.</figcaption>
 </figure>
 
 Four of the reviewed articles provided **ablation analyses**. We used two types of plots based on how each paper reported their table of numbers —point plots (probably averages) and plots with error bars (standard deviations).

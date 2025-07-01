@@ -28,7 +28,7 @@ This post is also accompanied by a [notebook](https://github.com/Afnan-Sultan/af
 
 Let's start by describing the playground. Imagine that we want to train a model to predict the aqueous solubility of a molecule.
 
-Aqueous solubility is measured in Molar unit and can range from zero (i.e., completely insoluble in water like wax) to one Molar (i.e., completely soluble in water like salt).
+Aqueous solubility is measured in Molar unit and can range from zero (i.e., completely insoluble in water like crystallized wax) to one Molar (i.e., completely soluble in water like salt).
 
 Since this is an imaginary scene, let’s pretend we have access to 1 million molecules with their corresponding aqueous solubility. This will constitute the population distribution of aqueous solubility (Figure 1).
 
@@ -51,7 +51,7 @@ The most naïve way to do this is to choose an algorithm you like, give it the 2
 <br> One day, your chemist gets interested in a new molecule and asks you to predict its solubility. The model says it’s going to be 0.75 Molar. The chemist goes to the lab, tests it, and it turns out to be 0.8 Molar. Your model was only 0.05 Molar off[^2]. Not bad at all, right?
 
 But wait — does this mean your model will *always* be 0.05 Molar off for new predictions?  
-What if your chemist comes with another molecule, and this time the model predicts 0.2 Molar, but the actual value turns out to be 0.41 Molar? Yikes. That’s way off! Should you shun your model and never use it again?
+What if your chemist comes with another molecule, and this time the model predicts 0.57 Molar, but the actual value turns out to be 0.36 Molar? Yikes. That’s way off! Should you shun your model and never use it again?
 
 Well, both of these cases are anecdotal. They don't tell you much about your model and might happen rarely. When you want to say *“my model’s error is `x` Molar”*, you're usually advised to report the **expected** error value.
 
