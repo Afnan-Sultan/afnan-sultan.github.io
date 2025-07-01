@@ -22,6 +22,9 @@ This post will start with extremely trivial points for those who have been doing
 
 This post is also accompanied by a [notebook](https://github.com/Afnan-Sultan/afnan-sultan.github.io/blob/master/tutorials/How%20to%20Report%20and%20Judge%20ML%20Model%20Performance%3A%20Part%201.ipynb){:target="_blank" rel="noopener"} to reproduce the figures shown here.
 
+> *Disclaimer*: I'm not a statistician — just a curious wanderer who stumbled upon inconsistencies in her research and is trying to patch them up.
+> I'm more than happy to be guided, corrected, or pointed toward intuitive and trustworthy content — or simply to entertain a curious discussion and see what comes of it
+
 ---
 
 ## Setting the Stage
@@ -87,7 +90,7 @@ You'll usually find model performance reported using the **average (µ)** value.
 
 ### 🧭 I Dare to Suggest: Report the Typical, Not the Expected [^4]
 
-So here’s a challenge to the norm: instead of defaulting to the expected (µ) value, report the typical (e.g., mode(s))[^5] — and the shape of the story behind it (e.g., whether the distribution is normal, skewed, etc.).  
+So here’s a challenge to the norm: instead of defaulting to the expected (µ) value only, report the typical (e.g., mode(s))[^5] — and the shape of the story behind it (e.g., whether the distribution is normal, skewed, etc.).
 <br>Or, at the very least, acknowledge when the expected and typical values diverge.
 
 At the end of the day, we want to objectively quantify our model’s behavior: when it works and when it doesn’t. Ignoring this (seemingly trivial) distinction can lead — and probably *has* led — us to draw the wrong conclusions.
@@ -153,7 +156,7 @@ Sometimes, the 200 new molecules will resemble the training set — the model pe
 
 <figure>
   <img src="/images/evaluation_1/sampling_uncertainty.png" alt="Figure 6" width="600"/>
-  <figcaption><strong>Figure 6:</strong> Comparison of model's performance when tested on a large dataset of 10K molecules, compared to 20 small datasets each consisting of 200 molecules. The performance of the small sets fluctuates, and the true expected value is around the average of all these fluctuations.</figcaption>
+  <figcaption><strong>Figure 6:</strong> Comparison of model's performance when tested on a large dataset of 10K molecules, compared to 10 small datasets each consisting of 200 molecules. The performance of the small sets fluctuates noticeably around the model's true performance.</figcaption>
 </figure>
 
 So we come **full circle**: reporting a typical error from a small test set is **not enough** to trust it — just as reporting the error on **one molecule** wasn’t enough either.
