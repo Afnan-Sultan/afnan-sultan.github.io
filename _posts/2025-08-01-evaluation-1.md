@@ -58,7 +58,7 @@ What if your chemist comes with another molecule, and this time the model predic
 
 Well, both of these cases are anecdotal. They don't tell you much about your model and might happen rarely. When you want to say *“my model’s error is `x` Molar”*, you're usually advised to report the **expected** error value.
 
-To report the expected value, you must test your model *enough* times on new molecules to find out what that value is (Figure 3).
+To report the expected value, you **must** test your model *enough* times on new molecules to find out what that value is (Figure 3).
 
 <figure>
   <img src="/images/evaluation_1/error_distribution.png" alt="Figure 3" width="600"/>
@@ -88,12 +88,15 @@ You'll usually find model performance reported using the **average (µ)** value.
 
 ---
 
-### 🧭 I Dare to Suggest: Report the Typical, Not the Expected [^4]
+### 🧭 I Dare to Suggest: Report the Typical, Not the Expected
 
-So here’s a challenge to the norm: instead of defaulting to the expected (µ) value only, report the typical (e.g., mode(s))[^5] — and the shape of the story behind it (e.g., whether the distribution is normal, skewed, etc.).
+So here’s a challenge to the norm: instead of defaulting to the expected (µ) value only, report the typical (e.g., mode(s))— and the shape of the story behind it (e.g., whether the distribution is normal, skewed, etc.).
 <br>Or, at the very least, acknowledge when the expected and typical values diverge.
 
 At the end of the day, we want to objectively quantify our model’s behavior: when it works and when it doesn’t. Ignoring this (seemingly trivial) distinction can lead — and probably *has* led — us to draw the wrong conclusions.
+
+P.S.: Before hunting this challenge down, I plan on writing a post dedicated for distributions. There, we can discuss the loopholes of this challenge and have more constructive views. 
+<br> This is not an invitation for adoption, but rather to stop and ponder...
 
 ---
 
@@ -101,9 +104,9 @@ At the end of the day, we want to objectively quantify our model’s behavior: w
 
 After explaining the difference between expected and typical values, I will use **“typical error”** to refer to the **most probable** error a model will produce.
 
-P.S.: In our imaginary case, where predictions are intentionally made to follow a **normal distribution**, the typical error (mode) and the expected error (µ) are the same.
+P.S.: In our imaginary case, where errors are intentionally made to follow a **normal distribution**, the typical error (mode) and the expected error (µ) are the same.
 
-So, after testing your model *enough* times on new molecules and identifying the typical value (Figure 3), the transparent language to use would be:
+So, after testing our model *enough* times on new molecules and identifying the typical value (Figure 3), the transparent language to use would be:
 
 > *“My model’s typical error is `x` Molar after being tested on `n` new molecules.”*
 
@@ -123,12 +126,12 @@ Not quite.
 
 ## Standard Deviation: How Stable Is Your Model?
 
-The typical value (here, same as expected) might be the most probable, but how often it occurs depends on the **spread** of the distribution — described by **variance (σ²)**, or more intuitively, by **standard deviation (σ)**[^6].
+The typical value (here, same as expected) might be the most probable, but how often it occurs depends on the **spread** of the distribution — described by **variance (σ²)**, or more intuitively, by **standard deviation (σ)**[^5].
 
 > **σ** measures the *average distance* between each error and the mean error.  
 > A **large σ** means predictions are spread out; a **small σ** means predictions cluster closely around the **expected** value.
 
-If two models have the same typical error, the one with **lower σ** is more *stable* and *trustworthy*. It fluctuates less and gives more **confidence** in its predictions (Figure 5).
+If two models have the same or close typical error, the one with **lower σ** is more *stable* and *trustworthy*. It fluctuates less and gives more **confidence** in its predictions (Figure 5).
 
 So, a good rule of thumb:
 
@@ -145,9 +148,9 @@ So, a good rule of thumb:
 ## Still Not Enough…
 
 So, is this it? Is this how you judge model performance?  
-Again, not quite. σ tells you how often this expected/typical value will occur, but how confident are you in this value to begin with?
+Again, not quite. σ tells you how often this expected/typical value will occur, but, the question is: how confident are you in this value to begin with?
 
-To say “my model’s typical error is `x ± σ` Molar” you must have **confidence** in that `x` value. That confidence comes from **testing on a large number of new samples**, something like **tens of thousands**[^7].
+To say “my model’s typical error is `x ± σ` Molar” you must have **confidence** in that `x` value. That confidence comes from **testing on a large number of new samples**, something like **tens of thousands**[^6].
 
 Let’s say we trained our model on 1600 molecules, tested on 400, and calculated the typical error. Now imagine your chemist comes with 200 more molecules. Do you expect the same typical error?
 
@@ -170,9 +173,9 @@ Let’s summarize:
 - A single prediction’s error ≠ model’s typical error.  
 - The expected error (µ) can differ from the typical value (mode) depending on the distribution shape.  
 - **Standard deviation (σ)** tells you how *stable* the model is.  
-  - If two models have the same typical error, the one with **lower σ** is **more stable** and **more reliable**.  
+  - If two models have similar typical error, the one with **lower σ** is **more stable** and **more reliable**.  
 - A large, representative test set is the **best** way to estimate a model’s typical/expected performance.  
-  - A small test set (e.g., 200) only gives an **estimate** of the true typical/expected error, and is subject to the representative quality of the contained molecules.
+  - A small test set (e.g., 200) only gives an **estimate** of the true typical/expected error, and is subject to the representative quality of the contained datapoints.
 
 But... what if you **don’t have access** to such large test data (which is the default case in our field)?  
 Is all hope lost?
@@ -190,10 +193,6 @@ But explaining why will make this post too long...
 
 [^3]: This assumption is grounded in the **law of large numbers**, which states that with a sufficiently large number of predictions, the average error will converge to the expected value (mean) — provided the data are independent and identically distributed (i.i.d.).
 
-[^4]: This is a temporary challenge, to be honest. Later, I will talk about how to proceed when your expected and typical are different. Because this will be telling you *where to look*, rather than *how to report*!
+[^5]: **Variance (σ²)** ends up in squared units (e.g., Molar²) because each error is squared; taking the square-root brings you back to the original units, giving the **standard deviation (σ)**. However, variance is the de facto spread descriptor because it is additive and differentiable — two traits calculus and probability love.
 
-[^5]: We’re explicitly discussing an **ideal** scenario in which the distribution is well-behaved, making the mode a reliable descriptor of what is “typical.”
-
-[^6]: **Variance (σ²)** ends up in squared units (e.g., Molar²) because each error is squared; taking the square-root brings you back to the original units, giving the **standard deviation (σ)**. However, variance is the de facto spread descriptor because it is additive and differentiable — two traits calculus and probability love.
-
-[^7]: 10K is an illustrative ballpark. The precise requirement depends on how narrow a confidence interval you need and how representative the new samples are.
+[^6]: 10K is an illustrative ballpark. The precise requirement depends on how narrow a confidence interval you need and how representative the new samples are.
